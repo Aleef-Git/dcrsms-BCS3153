@@ -8,7 +8,7 @@ There is two way to run, using [Laravel Sail](#using-laravel-sail) or [XAMPP](#u
 ### Using Laravel Sail 
 #### 0. Clone the repository
 ```
-git clone https://github.com/yasirsoleh/dcrsms-nuked.git
+git clone https://github.com/Aleef-Git/dcrsms-BCS3153.git
 ```
 #### 1. Make sure to be inside the directory
 ```
