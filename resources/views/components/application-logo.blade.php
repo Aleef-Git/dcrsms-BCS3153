@@ -1,0 +1,1 @@
+<img class="block h-12 w-auto" src="{{ asset('img/dercs.png') }}" />
