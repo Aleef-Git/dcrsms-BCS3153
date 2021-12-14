@@ -1,16 +1,17 @@
 # DCRSMS
 ## Maintainers
-Muhamad Aleef Firdaus bin Yusuf Woo (CB18016)
-Mohammad Alif Yasir bin Soleh (CB18015)
-Nurul Ain binti Zamridin (CB18118)
-Nurul Fitrah binti Mohd Rohaizad (CB18075)
-Hamizan Aziz bin Agusril (CB17139)
+Muhamad Aleef Firdaus bin Yusuf Woo (CB18016)\
+Mohammad Alif Yasir bin Soleh (CB18015)\
+Nurul Ain binti Zamridin (CB18118)\
+Nurul Fitrah binti Mohd Rohaizad (CB18075)\
+Hamizan Aziz bin Agusril (CB17139)\
 
 ## Purpose
 For the subject BCS3153 Software Engineering Practices Semester 2 Session 2020/2021.
 ## How to run
 There is two way to run, using [Laravel Sail](#using-laravel-sail) or [XAMPP](#using-xampp). Follow the instructions accordingly.
 ### Using Laravel Sail 
+Make sure [git](https://git-scm.com/), [Windows Subsystem for Linux version 2](https://docs.microsoft.com/en-us/windows/wsl/install), and [Docker](https://www.docker.com/products/docker-desktop) is installed before starting.
 #### 0. Clone the repository
 ```
 git clone https://github.com/Aleef-Git/dcrsms-bcs3153.git
@@ -61,6 +62,7 @@ http://localhost
 ```
 
 ### Using XAMPP
+Make sure [git](https://git-scm.com/), [XAMPP  (version 8 or above)](https://www.apachefriends.org/download.html), [Composer](https://getcomposer.org/download/), and [Node.js](https://nodejs.org/en/download/) is installed before starting.
 #### 0. Clone the repository
 ```
 git clone https://github.com/Aleef-Git/dcrsms-bcs3153.git
