@@ -11,7 +11,7 @@ For the subject BCS3153 Software Engineering Practices Semester 2 Session 2020/2
 ## How to run
 There is two way to run, using [Laravel Sail](#using-laravel-sail) or [XAMPP](#using-xampp). Follow the instructions accordingly.
 ### Using Laravel Sail 
-Make sure [git](https://git-scm.com/), [Windows Subsystem for Linux version 2](https://docs.microsoft.com/en-us/windows/wsl/install), and [Docker](https://www.docker.com/products/docker-desktop) is installed before starting.
+Make sure [git](https://git-scm.com/), [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install), and [Docker](https://www.docker.com/products/docker-desktop) is installed before starting.
 #### 0. Clone the repository
 ```
 git clone https://github.com/Aleef-Git/dcrsms-bcs3153.git
