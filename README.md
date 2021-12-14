@@ -1,5 +1,10 @@
 # DCRSMS
-## Author
+## Maintainers
+Muhamad Aleef Firdaus bin Yusuf Woo (CB18016)
+Mohammad Alif Yasir bin Soleh (CB18015)
+Nurul Ain binti Zamridin (CB18118)
+Nurul Fitrah binti Mohd Rohaizad (CB18075)
+Hamizan Aziz bin Agusril (CB17139)
 
 ## Purpose
 For the subject BCS3153 Software Engineering Practices Semester 2 Session 2020/2021.
@@ -8,11 +13,11 @@ There is two way to run, using [Laravel Sail](#using-laravel-sail) or [XAMPP](#u
 ### Using Laravel Sail 
 #### 0. Clone the repository
 ```
-git clone https://github.com/Aleef-Git/dcrsms-BCS3153.git
+git clone https://github.com/Aleef-Git/dcrsms-bcs3153.git
 ```
 #### 1. Make sure to be inside the directory
 ```
-cd dcrsms-BCS3153
+cd dcrsms-bcs3153
 ```
 #### 2. Composer install using docker to prepare vendor folder
 ```
@@ -58,11 +63,11 @@ http://localhost
 ### Using XAMPP
 #### 0. Clone the repository
 ```
-git clone https://github.com/Aleef-Git/dcrsms-BCS3153.git
+git clone https://github.com/Aleef-Git/dcrsms-bcs3153.git
 ```
 #### 1. Make sure to be inside the directory
 ```
-cd dcrsms-BCS3153
+cd dcrsms-bcs3153
 ```
 #### 2. Composer install dependencies
 ```
