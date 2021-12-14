@@ -4,7 +4,7 @@ Muhamad Aleef Firdaus bin Yusuf Woo (CB18016)\
 Mohammad Alif Yasir bin Soleh (CB18015)\
 Nurul Ain binti Zamridin (CB18118)\
 Nurul Fitrah binti Mohd Rohaizad (CB18075)\
-Hamizan Aziz bin Agusril (CB17139)\
+Hamizan Aziz bin Agusril (CB17139)
 
 ## Purpose
 For the subject BCS3153 Software Engineering Practices Semester 2 Session 2020/2021.
