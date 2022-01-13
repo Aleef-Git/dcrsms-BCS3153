@@ -38,7 +38,7 @@
                                             @endif
                                         </td>
                                         <td>
-                                            @if ($delivery->service_request->payment->type == 'cash_on_delivery')
+                                            @if ($delivery->cash_on_delivery == 'cash_on_delivery')
                                                 Yes
                                             @else
                                                 No
