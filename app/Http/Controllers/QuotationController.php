@@ -40,6 +40,8 @@ class QuotationController extends Controller
             'cost' => $request->cost,
         ]);
 
+        ServiceRequest::Where('id', $request->service_request_id)->update((['customer_approval' => 'waiting']));
+
         return redirect()->route('quotation.show', ['service_request' => $request->service_request_id]);
     }
 
