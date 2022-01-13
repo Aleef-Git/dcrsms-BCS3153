@@ -7,7 +7,7 @@ Nurul Fitrah binti Mohd Rohaizad (CB18075)\
 Hamizan Aziz bin Agusril (CB17139)
 
 ## Purpose
-For the subject BCS3153 Software Engineering Practices Semester 2 Session 2020/2021.
+For the subject BCS3153 Software Evolution & Maintenance Semester 1 Session 2021/2022.
 ## How to run
 There is two way to run, using [Laravel Sail](#using-laravel-sail) or [XAMPP](#using-xampp). Follow the instructions accordingly.
 ### Using Laravel Sail 
