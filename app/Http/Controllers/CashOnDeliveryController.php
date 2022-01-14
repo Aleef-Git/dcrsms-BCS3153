@@ -14,7 +14,7 @@ class CashOnDeliveryController extends Controller
     {
         if (Auth::check() && Auth::user()->hasRole('staff')) {
             $cash_on_deliveries = CashOnDelivery::all();
-            return view('CashOnDelivery.index', compact('cash_on_deliveries'));
+            return view('CashOnDelivery.staff_index', compact('cash_on_deliveries'));
         }elseif (Auth::check() && Auth::user()->hasRole('rider')) {
             $cash_on_deliveries = Auth::user()->rider->cash_on_deliveries;
             return view('CashOnDelivery.index', compact('cash_on_deliveries'));
