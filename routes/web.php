@@ -214,6 +214,3 @@ Route::prefix('/payment')->group(function () {
         ->name('payment.cash_on_delivery');
 });
 
-Route::get('/fitrah', function () {
-    return view('welcome');
-});
