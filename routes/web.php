@@ -213,3 +213,7 @@ Route::prefix('/payment')->group(function () {
     Route::get('/{payment}/cash_on_delivery', [PaymentController::class, 'cash_on_delivery'])
         ->name('payment.cash_on_delivery');
 });
+
+Route::get('/fitrah', function () {
+    return view('welcome');
+});
