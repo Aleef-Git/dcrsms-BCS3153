@@ -48,6 +48,16 @@
                                 @endif
                             </tbody>
                         </table>
+                        <style>
+                       
+                       div{
+                                text-align:center;
+                            }
+                        </style>
+                        <div>
+                        <br></br>
+                        <a class="btn btn-sm"  href="{{ route('dashboard') }}">Back</a>
+                        </div>
                     </div>                      
                 </div>
             </div>

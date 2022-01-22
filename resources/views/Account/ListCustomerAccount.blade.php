@@ -10,6 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="overflow-x-auto">
+                
                         <table class="table w-full" id="myTable2">
                             <thead>
                                 <tr>
@@ -44,7 +45,19 @@
                                     </tr>
                                 @endif
                             </tbody>
+
                         </table>
+                        <style>
+                            div{
+                                text-align:center;
+                            }
+                        </style>
+                        <div>
+
+                        <a class="btn btn-sm"  href="{{ route('dashboard') }}">Back</a>
+                        </div>
+
+                    
                     </div>                      
                 </div>
             </div>

@@ -20,8 +20,10 @@
                             <input type="text" name="last_name" class="input input-bordered" value="{{ $staff->last_name }}">
                             <label class="label" for="phone_number">Phone Number</label>
                             <input type="text" name="phone_number" class="input input-bordered" value="{{ $staff->phone_number }}">
-                            <br><input class="btn mt-3" type="submit">
-                        </form>
+                            <br></br>
+                            <a class="btn btn-sm" href="{{ route('dashboard') }}">Back</a>
+                           
+                            <input class="btn btn-sm" type="submit">
                     </div>                      
                 </div>
             </div>
