@@ -22,7 +22,21 @@
                             <input type="text" name="phone_number" class="input input-bordered" value="{{ $rider->phone_number }}">
                             <label class="label" for="address">Address</label>
                             <textarea class="textarea textarea-bordered min-w-full" name="address" style="min-height:100px">{{ $rider->address }}</textarea>
-                            <br><input class="btn mt-3" type="submit">
+                    
+                             <x-label for="license" :value="__('License')" />
+                             <x-input type="file" id="license" class="block mt-1 w-full" name="license" /> 
+                        
+                            <x-label for="roadtax" :value="__('Roadtax')" />
+                             <x-input type="file" id="roadtax" class="block mt-1 w-full" name="roadtax" />
+            
+                              
+                            <a class="btn btn-sm" href="{{ route('dashboard') }}">Back</a>
+                           
+                           
+             
+                             
+                            
+                            <input class="btn btn-sm" type="submit">
                         </form>
                     </div>                      
                 </div>
