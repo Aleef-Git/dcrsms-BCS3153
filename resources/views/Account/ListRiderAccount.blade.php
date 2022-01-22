@@ -14,7 +14,7 @@
                             <thead>
                                 <tr>
                                     <th>Rider ID</th> 
-                                    <th>Fist Name</th> 
+                                    <th>First Name</th> 
                                     <th>Last Name</th>
                                     <th>Status</th>
                                     <th>Action</th>

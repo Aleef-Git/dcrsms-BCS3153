@@ -11,7 +11,9 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="overflow-x-auto">
                         <x-auth-validation-errors class="mb-4" :errors="$errors" />
+                        
                         <form action="{{ route('account.update') }}" method="POST" enctype="multipart/form-data">
+                         
                             @csrf
                             @method('PUT')
                             <label class="label" for="first_name">First Name</label>
@@ -29,18 +31,32 @@
                             <x-label for="roadtax" :value="__('Roadtax')" />
                              <x-input type="file" id="roadtax" class="block mt-1 w-full" name="roadtax" />
             
-                              
+                            <br></br>
                             <a class="btn btn-sm" href="{{ route('dashboard') }}">Back</a>
                            
-                           
-             
-                             
-                            
                             <input class="btn btn-sm" type="submit">
+
                         </form>
                     </div>                      
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        function submitForm(form) {
+            swal({
+                title: "Success!",
+                text: "You added the item!",
+                icon: "success",
+                button: "OK",
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    form.submit();
+                }
+            });
+            return false;
+        }
+    </script>
 </x-app-layout>
