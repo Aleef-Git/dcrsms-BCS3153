@@ -13,8 +13,7 @@
                         <x-auth-validation-errors class="mb-4" :errors="$errors" />
                         
                         <form action="{{ route('account.update') }}" method="POST" enctype="multipart/form-data">
-                         
-                            @csrf
+                       
                             @method('PUT')
                             <label class="label" for="first_name">First Name</label>
                             <input type="text" name="first_name" class="input input-bordered" value="{{ $rider->first_name }}">
@@ -42,21 +41,5 @@
             </div>
         </div>
     </div>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script>
-        function submitForm(form) {
-            swal({
-                title: "Success!",
-                text: "You added the item!",
-                icon: "success",
-                button: "OK",
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    form.submit();
-                }
-            });
-            return false;
-        }
-    </script>
+  
 </x-app-layout>

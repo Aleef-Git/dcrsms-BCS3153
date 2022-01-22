@@ -22,7 +22,11 @@
                             <input type="text" name="phone_number" class="input input-bordered" value="{{ $customer->phone_number }}">
                             <label class="label" for="address">Address</label>
                             <textarea class="textarea textarea-bordered min-w-full" name="address" style="min-height:100px">{{ $customer->address }}</textarea>
-                            <br><input class="btn mt-3" type="submit">
+                           
+                            <a class="btn btn-sm" href="{{ route('dashboard') }}">Back</a>
+                           
+                           <input class="btn btn-sm" type="submit">
+
                         </form>
                     </div>                      
                 </div>
