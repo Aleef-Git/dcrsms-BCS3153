@@ -4,14 +4,13 @@
             {{ __('Repair') }}
         </h2>
     </x-slot>
-
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="overflow-x-auto">
                         <x-auth-validation-errors class="mb-4" :errors="$errors" />
-                        <form action="{{ route('repair.store_item', ['repair'=>$repair]) }}" method="POST">
+                        <form action="{{ route('repair.store_item', ['repair'=>$repair]) }}" method="POST" onsubmit="return submitForm(this);">
                             @csrf
                             <label class="label" for="device_name">Device Name</label>
                             <input type="text" name="device_name" placeholder="Device Name" class="input input-bordered" value="{{ $repair->service_request->device_name }}" disabled>
@@ -21,9 +20,29 @@
                             <input type="number" name="cost" placeholder="Cost" class="input input-bordered">
                             <br><input class="btn mt-3" type="submit">
                         </form>
-                    </div>                      
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        function submitForm(form) {
+            swal({
+                title: "Success!",
+                text: "You added the item!",
+                icon: "success",
+                button: "OK",
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    form.submit();
+                }
+            });
+            return false;
+        }
+    </script>
+
+
 </x-app-layout>
+

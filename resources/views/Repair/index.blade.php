@@ -14,17 +14,18 @@
                             <thead>
                                 <tr>
                                     <th>Service Request ID</th>
-                                    <th>Name</th> 
+                                    <th>Name</th>
                                     <th>Status</th>
+                                    <th>Total Cost</th>
                                     <th>Action</th>
                                 </tr>
-                            </thead> 
+                            </thead>
                             <tbody>
                                 @if ($repairs !=null)
                                     @foreach ($repairs as $repair)
                                     <tr>
                                         <td>{{ $repair->service_request->id }}</td>
-                                        <td>{{ $repair->service_request->device_name }}</td> 
+                                        <td>{{ $repair->service_request->device_name }}</td>
                                         <td>
                                             @if ($repair->status == 'pending')
                                                 Pending
@@ -35,7 +36,11 @@
                                             @elseif ($repair->status == 'cannot_be_repaired')
                                                 Cannot be Repaired
                                             @endif
-                                        </td> 
+                                        </td>
+                                        <td>
+                                            {{ $repair->repair_items->sum('cost') }}
+                                        </td>
+
                                         <td>
                                             <a class="btn btn-sm" href="{{ route('repair.show', ['repair'=>$repair]) }}">View</a>
                                             @if (Auth::user()->hasRole('staff') && $repair->status != 'repaired' && $repair->status != 'cannot_be_repaired')
@@ -51,7 +56,7 @@
                                 @endif
                             </tbody>
                         </table>
-                    </div>                      
+                    </div>
                 </div>
             </div>
         </div>
