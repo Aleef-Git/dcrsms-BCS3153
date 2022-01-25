@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CashOnDelivery;
 use App\Models\Delivery;
 use App\Models\ServiceRequest;
 use Illuminate\Http\Request;
@@ -61,13 +62,23 @@ class DeliveryController extends Controller
             $payment = $delivery->service_request->payment;
             $payment->status = 'received';
             $payment->save();
+
+            if ($delivery->service_request->payment->type == 'cash_on_delivery') {
+                CashOnDelivery::create([
+                    'rider_id' => Auth::user()->rider->id,
+                    'delivery_id' => $delivery->id,
+                    'amount' => $delivery->service_request->payment->amount,
+                    'status' => 'received',
+                    'rider_id' => Auth::user()->rider->id,
+                ]);
+            }
         }
         return redirect()->route('delivery.show', ['delivery' => $delivery]);
     }
 
     public function destroy(Delivery $delivery)
     {
-        
+
     }
 
     public function rider_accept(Delivery $delivery)

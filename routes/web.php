@@ -11,6 +11,8 @@ use App\Http\Controllers\RepairController;
 use App\Http\Controllers\RepairItemController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CashOnDeliveryController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,22 +35,22 @@ Route::middleware(['guest'])->group(function () {
     Route::prefix('/register')->group(function () {
         Route::get('/staff', [RegistrationController::class, 'registerStaff'])
             ->name('register.staff');
-    
+
         Route::post('/staff', [RegistrationController::class, 'createStaff']);
-    
+
         Route::get('/', [RegistrationController::class, 'index'])
             ->name('register');
-    
+
         Route::get('/customer', [RegistrationController::class, 'registerCustomer'])
             ->name('register.customer');
-    
+
         Route::post('/customer', [RegistrationController::class, 'createCustomer']);
-    
+
         Route::get('/rider', [RegistrationController::class, 'registerRider'])
             ->name('register.rider');
-    
+
         Route::post('/rider', [RegistrationController::class, 'createRider']);
-    }); 
+    });
 });
 
 Route::prefix('/account')->group(function () {
@@ -67,7 +69,7 @@ Route::prefix('/account')->group(function () {
         Route::prefix('/list')->group(function () {
             Route::get('/customer', [AccountController::class,'viewAllCustomerAccount'])
                 ->name('account.list.customer');
-            
+
             Route::get('/rider', [AccountController::class,'viewAllRiderAccount'])
                 ->name('account.list.rider');
 
@@ -212,4 +214,17 @@ Route::prefix('/payment')->group(function () {
         ->name('payment.delete');
     Route::get('/{payment}/cash_on_delivery', [PaymentController::class, 'cash_on_delivery'])
         ->name('payment.cash_on_delivery');
+});
+
+Route::prefix('/cash_on_delivery')->group(function (){
+    Route::get('/', [CashOnDeliveryController::class, 'index'])
+        ->name('cash_on_delivery.index');
+    Route::get('{cash_on_delivery}/staff_verify', [CashOnDeliveryController::class, 'staff_verify'])
+        ->name('cash_on_delivery.staff_verify');
+    Route::get('{cash_on_delivery}/rider_verify/', [CashOnDeliveryController::class, 'rider_verify'])
+        ->name('cash_on_delivery.rider_verify');
+    Route::get('{cash_on_delivery}/online_verify', [CashOnDeliveryController::class, 'online_verify'])
+        ->name('cash_on_delivery.online_verify');
+    Route::put('/{cash_on_delivery}', [CashOnDeliveryController::class, 'update'])
+        ->name('cash_on_delivery.update');
 });
