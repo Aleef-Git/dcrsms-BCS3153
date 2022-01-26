@@ -57,7 +57,7 @@ class RegistrationController extends Controller
         $user->attachRole('customer');
         event(new Registered($user));
         Auth::login($user);
-        return redirect()->route('dashbaord');
+        return redirect()->route('dashboard');
     }
 
     public function createRider(Request $request)
@@ -91,7 +91,7 @@ class RegistrationController extends Controller
         $user->attachRole('rider');
         event(new Registered($user));
         Auth::login($user);
-        return redirect()->route('dashbaord');
+        return redirect()->route('dashboard');
     }
 
     public function registerStaff()
@@ -124,7 +124,7 @@ class RegistrationController extends Controller
         $user->attachRole('staff');
         event(new Registered($user));
         Auth::login($user);
-        return redirect()->route('dashbaord');
+        return redirect()->route('dashboard');
     }
 
 }
