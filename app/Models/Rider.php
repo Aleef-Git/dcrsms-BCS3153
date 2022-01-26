@@ -33,4 +33,9 @@ class Rider extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function cash_on_deliveries()
+    {
+        return $this->hasMany(CashOnDelivery::class);
+    }
 }

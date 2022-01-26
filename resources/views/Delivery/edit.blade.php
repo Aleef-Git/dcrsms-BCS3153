@@ -17,13 +17,25 @@
                             <label class="label" for="id">Delivery ID</label>
                             <input type="text" name="id" placeholder="Delivery ID" class="input input-bordered" value="{{ $delivery->id }}" disabled>
                             <br>
+                            <label class="label" for="name">Cash on Delivery</label>
+                            @if ($delivery->cash_on_delivery == 'yes')
+                                <input type="text" name="cash_on_delivery" placeholder="Cash on Delivery" class="input input-bordered" value="Yes" disabled>
+                            @else
+                                <input type="text" name="cash_on_delivery" placeholder="Cash on Delivery" class="input input-bordered" value="No" disabled>
+                            @endif
+                            <br>
+                            @if ($delivery->cash_on_delivery == 'yes')
+                                <label class="label" for="amount">Amount to be Collected</label>
+                                <input type="text" name="amount" placeholder="Amount to be Collected" class="input input-bordered" value="RM {{ $delivery->service_request->payment->amount }}" disabled>
+                            @endif
+                            <br>
                             <select class="select select-bordered w-full max-w-xs mt-3" name="status">
-                                <option disabled="disabled" selected="selected">Select New Status</option> 
-                                <option value="completed">Completed</option> 
+                                <option disabled="disabled" selected="selected">Select New Status</option>
+                                <option value="completed">Completed</option>
                                 <option value="failed">Failed</option>
                             </select>
                             <br>
-                            <input class="btn mt-3" type="submit">                       
+                            <input class="btn mt-3" type="submit">
                         </form>
                     </div>
                 </div>

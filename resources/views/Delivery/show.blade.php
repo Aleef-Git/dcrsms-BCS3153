@@ -14,6 +14,19 @@
                         <input type="text" name="id" placeholder="Delivery ID" class="input input-bordered" value="{{ $delivery->id }}" disabled>
                         <label class="label" for="address">Address</label>
                         <textarea class="textarea textarea-bordered min-w-full" name="address" style="min-height:100px" placeholder="Address" disabled>{{ $delivery->address }}</textarea>
+                        <br>
+                        <label class="label" for="name">Cash on Delivery</label>
+                        @if ($delivery->cash_on_delivery == 'yes')
+                            <input type="text" name="cash_on_delivery" placeholder="Cash on Delivery" class="input input-bordered" value="Yes" disabled>
+                        @else
+                            <input type="text" name="cash_on_delivery" placeholder="Cash on Delivery" class="input input-bordered" value="No" disabled>
+                        @endif
+                        <br>
+                        @if ($delivery->cash_on_delivery == 'yes')
+                            <label class="label" for="amount">Amount to be Collected</label>
+                            <input type="text" name="amount" placeholder="Amount to be Collected" class="input input-bordered" value="RM {{ $delivery->service_request->payment->amount }}" disabled>
+                        @endif
+                        <br>
                         <label class="label" for="status">Status</label>
                         @if ($delivery->status == 'waiting_rider')
                             <span>Waiting Rider</span>
@@ -24,7 +37,7 @@
                         @elseif ($delivery->status == 'failed')
                             <span>Failed</span>
                         @endif
-                        
+
                     </div>
                 </div>
             </div>

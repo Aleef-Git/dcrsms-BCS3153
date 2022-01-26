@@ -49,14 +49,21 @@
                     <x-nav-link :href="route('payment.index')" :active="request()->routeIs('payment.index')">
                         {{ __('Payment') }}
                     </x-nav-link>
-                </div> 
+                </div>
                 @endif
                 @if (!Auth::user()->hasRole('staff'))
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('delivery.index')" :active="request()->routeIs('delivery.index')">
                         {{ __('Delivery') }}
                     </x-nav-link>
-                </div>                  
+                </div>
+                @endif
+                @if (!Auth::user()->hasRole('customer'))
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('cash_on_delivery.index')" :active="request()->routeIs('cash_on_delivery.index')">
+                        {{ __('Cash On Deliveries') }}
+                    </x-nav-link>
+                </div>
                 @endif
 
 
@@ -90,7 +97,7 @@
 
                         <x-dropdown-link href="{{ route('account.list.rider') }}">
                             {{ __('Manage Rider') }}
-                        </x-dropdown-link>                            
+                        </x-dropdown-link>
                         @endif
 
                         <!-- Authentication -->
