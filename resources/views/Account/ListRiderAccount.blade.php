@@ -14,7 +14,7 @@
                             <thead>
                                 <tr>
                                     <th>Rider ID</th> 
-                                    <th>Fist Name</th> 
+                                    <th>First Name</th> 
                                     <th>Last Name</th>
                                     <th>Status</th>
                                     <th>Action</th>
@@ -48,6 +48,16 @@
                                 @endif
                             </tbody>
                         </table>
+                        <style>
+                       
+                       div{
+                                text-align:center;
+                            }
+                        </style>
+                        <div>
+                        <br></br>
+                        <a class="btn btn-sm"  href="{{ route('dashboard') }}">Back</a>
+                        </div>
                     </div>                      
                 </div>
             </div>
