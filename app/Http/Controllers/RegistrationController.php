@@ -50,14 +50,14 @@ class RegistrationController extends Controller
             'user_id' => $user->id,
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
-            'phone_number' => $request->phone_number, 
+            'phone_number' => $request->phone_number,
             'address' => $request->address,
         ]);
 
         $user->attachRole('customer');
         event(new Registered($user));
         Auth::login($user);
-        return redirect(RouteServiceProvider::HOME);
+        return redirect()->route('dashbaord');
     }
 
     public function createRider(Request $request)
@@ -82,7 +82,7 @@ class RegistrationController extends Controller
             'user_id' => $user->id,
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
-            'phone_number' => $request->phone_number, 
+            'phone_number' => $request->phone_number,
             'address' => $request->address,
             'roadtax' => $request->file('roadtax')->store('roadtaxFile'),
             'license' => $request->file('license')->store('licenseFile'),
@@ -91,8 +91,8 @@ class RegistrationController extends Controller
         $user->attachRole('rider');
         event(new Registered($user));
         Auth::login($user);
-        return redirect(RouteServiceProvider::HOME);
-    } 
+        return redirect()->route('dashbaord');
+    }
 
     public function registerStaff()
     {
@@ -118,13 +118,13 @@ class RegistrationController extends Controller
             'user_id' => $user->id,
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
-            'phone_number' => $request->phone_number, 
+            'phone_number' => $request->phone_number,
         ]);
 
         $user->attachRole('staff');
         event(new Registered($user));
         Auth::login($user);
-        return redirect(RouteServiceProvider::HOME);
+        return redirect()->route('dashbaord');
     }
 
 }
