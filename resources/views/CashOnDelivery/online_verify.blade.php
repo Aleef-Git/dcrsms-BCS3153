@@ -192,7 +192,7 @@
 </head>
 
 <body>
-    <form action="{{ route('payment.update', ['payment'=>$payment]) }}" method="post" id="payment-form">
+    <form action="{{ route('cash_on_delivery.update', ['cash_on_delivery'=>$cash_on_delivery]) }}" method="post" id="payment-form">
         @csrf
         @method('PUT')
         <h2>Payment Details</h2>
@@ -203,7 +203,7 @@
         </div>
         <div class="form-group">
             <label for="ammount">Amount</label>
-            <input type="text" class="form-control" id="amount" name="amount" value="{{ $payment->amount }}" disabled>
+            <input type="text" class="form-control" id="amount" name="amount" value="{{ $cash_on_delivery->amount }}" disabled>
         </div>
 
 

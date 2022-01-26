@@ -11,7 +11,7 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="overflow-x-auto">
                         <x-auth-validation-errors class="mb-4" :errors="$errors" />
-                        <form action="{{ route('service_request.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('service_request.store') }}" method="POST" onsubmit="return submitForm(this);" enctype="multipart/form-data">
                             @csrf
                             <label class="label" for="device_name">Device Name</label>
                             <input type="text" name="device_name" placeholder="Device Name" class="input input-bordered">
@@ -26,4 +26,21 @@
             </div>
         </div>
     </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        function submitForm(form) {
+            swal({
+                title: "Success!",
+                text: "You added the request!",
+                icon: "success",
+                button: "OK",
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    form.submit();
+                }
+            });
+            return false;
+        }
+    </script>
 </x-app-layout>

@@ -13,18 +13,19 @@
                         <table class="table w-full">
                             <thead>
                                 <tr>
-                                    <th>No</th> 
-                                    <th>Address</th> 
+                                    <th>No</th>
+                                    <th>Address</th>
                                     <th>Status</th>
+                                    <th>Cash on Delivery</th>
                                     <th>Action</th>
                                 </tr>
-                            </thead> 
+                            </thead>
                             <tbody>
                                 @if ($deliveries !=null)
                                     @foreach ($deliveries as $delivery)
                                     <tr>
-                                        <th>{{ $delivery->id }}</th> 
-                                        <td>{{ $delivery->address }}</td> 
+                                        <th>{{ $delivery->id }}</th>
+                                        <td>{{ $delivery->address }}</td>
                                         <td>
                                             @if ($delivery->status == 'waiting_rider')
                                                 Waiting Rider
@@ -35,7 +36,14 @@
                                             @elseif ($delivery->status == 'failed')
                                                 Failed
                                             @endif
-                                        </td> 
+                                        </td>
+                                        <td>
+                                            @if ($delivery->cash_on_delivery == 'yes')
+                                                Yes
+                                            @else
+                                                No
+                                            @endif
+                                        </td>
                                         <td>
                                             <a class="btn btn-sm" href="{{ route('delivery.show', ['delivery'=>$delivery]) }}">View</a>
                                             @if (Auth::user()->hasRole('rider'))
@@ -56,7 +64,7 @@
                                 @endif
                             </tbody>
                         </table>
-                    </div>                      
+                    </div>
                 </div>
             </div>
         </div>
