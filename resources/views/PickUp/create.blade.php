@@ -16,7 +16,7 @@
                             @csrf
                             <input type="text" name="service_request_id" placeholder="Service Request ID" class="input input-bordered" value="{{ $service_request->id }}" hidden>
                             <label class="label" for="device_description">Pick Up Address</label>
-                            <textarea class="textarea textarea-bordered min-w-full" name="address" style="min-height:100px" placeholder="Input Address">{{ $service_request->customer->address }}</textarea>
+                            <textarea id="address" class="textarea textarea-bordered min-w-full" name="address" style="min-height:100px" placeholder="Input Address">{{ $service_request->customer->address }}</textarea>
                             <div id="map"></div>
                             <br><input class="btn mt-3" type="submit">
                         </form>
@@ -27,7 +27,7 @@
     </div>
 </x-app-layout>
 <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGisoxiNZ91vjXTY8qeT7cpmUt59KgVMY&callback=initMap&v=weekly&channel=2"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYWvJL_rE9mmhWcSN66YYsRCsbgWCTdbk&callback=initMap&v=weekly&channel=2"
       async
     ></script>
     <script>
